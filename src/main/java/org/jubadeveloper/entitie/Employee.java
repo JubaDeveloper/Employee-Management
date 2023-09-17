@@ -1,33 +1,22 @@
 package org.jubadeveloper.entitie;
 
 import jakarta.persistence.*;
-import net.bytebuddy.implementation.bind.annotation.Default;
 import org.hibernate.annotations.ColumnDefault;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.EnumOptions;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.time.LocalDate;
 
-enum EmployeeStatus {
-    ACTIVE,
-    INACTIVE
-}
 @Entity
 public class Employee {
     @Id
     @GeneratedValue
     private Long id;
     private String name;
-    @ColumnDefault(value = "INACTIVE")
-    @Enumerated(EnumType.STRING)
-    private EmployeeStatus status;
-    @ColumnDefault("now()")
     private LocalDate createdAt;
 
-    public Employee(Long id, String name, EmployeeStatus status) {
-        this.id = id;
+    public Employee(String name, EmployeeStatus status) {
         this.name = name;
-        this.status = status;
+        this.createdAt = LocalDate.now();
     }
 
     public Long getId() {
@@ -46,11 +35,4 @@ public class Employee {
         this.name = name;
     }
 
-    public EmployeeStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(EmployeeStatus status) {
-        this.status = status;
-    }
 }
