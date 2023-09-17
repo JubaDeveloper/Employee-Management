@@ -39,3 +39,4 @@ build/
 
 ## Config files
 application.yaml
+persistence.xml
