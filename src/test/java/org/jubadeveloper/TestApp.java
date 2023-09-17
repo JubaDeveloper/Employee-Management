@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestApp {
     @Autowired
-    Main main;
+    Main main = null;
 
     @Test
     public void load () {
