@@ -29,17 +29,21 @@ public class EmployeeService implements EmployeeServiceModel {
     public Employee get(Long id) throws EmployeeNotFound {
         return employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFound(id));
     }
-
-    @Override
-    public Employee delete(Employee employee) throws EmployeeNotFound {
-        return employeeRepository.findById(employee.getId()).map(employee1 -> {
-            employeeRepository.delete(employee1);
-            return employee1;
-        }).orElseThrow(() -> new EmployeeNotFound(employee.getId()));
-    }
-
     @Override
     public Employee update(Long id, Employee newEmployee) {
-        return null;
+        return employeeRepository.findById(id).map(employee -> {
+            employee.setName(newEmployee.getName());
+            return employeeRepository.save(employee);
+        }).orElseGet(() -> {
+            newEmployee.setId(id);
+            return employeeRepository.save(newEmployee);
+        });
+    }
+    @Override
+    public Employee delete(Long id) throws EmployeeNotFound {
+        return employeeRepository.findById(id).map(employee1 -> {
+            employeeRepository.delete(employee1);
+            return employee1;
+        }).orElseThrow(() -> new EmployeeNotFound(id));
     }
 }
