@@ -1,8 +1,6 @@
 package org.jubadeveloper.entitie;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.ColumnDefault;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.time.LocalDate;
 
@@ -14,7 +12,7 @@ public class Employee {
     private String name;
     private LocalDate createdAt;
 
-    public Employee(String name, EmployeeStatus status) {
+    public Employee(String name) {
         this.name = name;
         this.createdAt = LocalDate.now();
     }
