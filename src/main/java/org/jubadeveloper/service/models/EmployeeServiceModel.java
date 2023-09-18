@@ -11,6 +11,6 @@ public interface EmployeeServiceModel {
     List<Employee> fetch();
     Employee create (Employee employee);
     Employee get(Long id) throws EmployeeNotFound;
-    Employee delete(Employee employee) throws EmployeeNotFound;
+    Employee delete(Long id) throws EmployeeNotFound;
     Employee update(Long id, Employee newEmployee);
 }
