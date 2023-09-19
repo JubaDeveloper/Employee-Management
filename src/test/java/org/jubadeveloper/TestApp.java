@@ -28,6 +28,9 @@ public class TestApp {
     @Test
     public void shouldLoadInitialEmployee () {
         // Fetching the employees
-        String url = "http://localhost:" + port + "/";
+        String url = "http://localhost:" + port + "/employees";
+        List<Employee> employees = restTemplate.getForObject(url, List.class);
+        // We have only one employee which was preloaded on db
+        assertEquals(employees.size(), 1);
     }
 }

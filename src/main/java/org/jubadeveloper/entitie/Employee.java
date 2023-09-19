@@ -12,6 +12,8 @@ public class Employee {
     private String name;
     private LocalDate createdAt;
 
+    public Employee () {}
+
     public Employee(String name) {
         this.name = name;
         this.createdAt = LocalDate.now();
