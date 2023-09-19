@@ -11,23 +11,23 @@ import java.util.List;
 @RestController
 public class EmployeeController {
     @Autowired EmployeeService employeeService;
-    @GetMapping("/employees")
+    @GetMapping("/api/employees")
     public List<Employee> getEmployees () {
         return employeeService.fetch();
     }
-    @GetMapping("/employee/{id}")
+    @GetMapping("/api/employee/{id}")
     public Employee getEmployee (@PathVariable Long id) throws EmployeeNotFound {
         return employeeService.get(id);
     }
-    @PostMapping("/employee")
+    @PostMapping("/api/employee")
     public Employee createEmployee (@RequestBody Employee employee) {
         return employeeService.create(employee);
     }
-    @PutMapping("/employee/{id}")
+    @PutMapping("/api/employee/{id}")
     public Employee updateEmployee (@PathVariable Long id, @RequestBody Employee employee) {
         return employeeService.update(id, employee);
     }
-    @DeleteMapping("/employee/{id}")
+    @DeleteMapping("/api/employee/{id}")
     public Employee deleteEmployee (@PathVariable Long id) throws EmployeeNotFound {
         return employeeService.delete(id);
     }
