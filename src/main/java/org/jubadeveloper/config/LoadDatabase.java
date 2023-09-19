@@ -19,7 +19,7 @@ class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase () {
         return args -> {
-            log.info("Preloading " + employeeService.create(new Employee("Juan")));
+            log.info("Preloading " + employeeService.create(new Employee("Juan", "joao@gmail.com")));
         };
     }
 }
