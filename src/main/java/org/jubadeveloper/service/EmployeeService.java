@@ -33,6 +33,7 @@ public class EmployeeService implements EmployeeServiceModel {
     public Employee update(Long id, Employee newEmployee) {
         return employeeRepository.findById(id).map(employee -> {
             employee.setName(newEmployee.getName());
+            employee.setEmail(newEmployee.getEmail());
             return employeeRepository.save(employee);
         }).orElseGet(() -> {
             newEmployee.setId(id);
