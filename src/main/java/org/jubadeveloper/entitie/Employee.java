@@ -37,4 +37,11 @@ public class Employee {
         this.name = name;
     }
 
+    public String getEmail () {
+        return this.email;
+    }
+
+    public void setEmail (String email) {
+        this.email = email;
+    }
 }
