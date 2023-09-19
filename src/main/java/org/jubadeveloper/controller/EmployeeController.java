@@ -1,15 +1,11 @@
 package org.jubadeveloper.controller;
 
-import org.springframework.util.ResourceUtils;
 import org.jubadeveloper.entitie.Employee;
 import org.jubadeveloper.service.EmployeeService;
 import org.jubadeveloper.service.error.EmployeeNotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.HTML;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.List;
 
 @RestController
