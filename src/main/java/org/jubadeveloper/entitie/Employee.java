@@ -10,11 +10,13 @@ public class Employee {
     @GeneratedValue
     private Long id;
     private String name;
+    private String email;
     private LocalDate createdAt;
 
     public Employee () {}
 
-    public Employee(String name) {
+    public Employee(String name, String email) {
+        this.email = email;
         this.name = name;
         this.createdAt = LocalDate.now();
     }
