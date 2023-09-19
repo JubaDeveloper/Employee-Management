@@ -1,6 +1,5 @@
 package org.jubadeveloper;
 
-import org.jubadeveloper.entitie.Employee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,7 +28,7 @@ public class TestApp {
     public void shouldLoadInitialEmployee () {
         // Fetching the employees
         String url = "http://localhost:" + port + "/employees";
-        List<Employee> employees = restTemplate.getForObject(url, List.class);
+        List<?> employees = restTemplate.getForObject(url, List.class);
         // We have only one employee which was preloaded on db
         assertEquals(employees.size(), 1);
     }
