@@ -4,6 +4,9 @@
 
 ## 🔧 <b>Configuration file (application.yaml)</b> 🔧
 
+> [!IMPORTANT]
+> Add those files to your .gitignore if you want yo publish the copy of this project
+
 ```yaml
 spring:
   devtools:
@@ -24,9 +27,6 @@ server:
 ```
 
 - You should too configure your [<b>persistence.xml</b>](https://docs.jboss.org/hibernate/orm/6.3/userguide/html_single/Hibernate_User_Guide.html#bootstrap-jpa-xml-files)
-
-> [!IMPORTANT]
-> Add those files if you want yo publish the copy of that project
 
 
 ## 🔨 <b>Packing application</b> 🔨
