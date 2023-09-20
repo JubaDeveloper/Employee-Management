@@ -1,0 +1,23 @@
+spring:
+  config:
+    active.on-profile: docker
+  devtools:
+    restart:
+      additional-paths: "static/**"
+      enabled: true
+    livereload:
+      enabled: false
+  datasource:
+    url: "jdbc:postgresql://db:5432/hibernate"
+    username: "juba" // Test env
+    password: "juba" // Test env
+    driver-class-name: "org.postgresql.Driver"
+  jooq:
+    sql-dialect: "org.hibernate.dialect.PostgreSQLDialect"
+  jpa:
+    hibernate:
+      ddl-auto: "create-drop"
+    show-sql: true
+provider: "org.hibernate.jpa.HibernatePersistenceProvider"
+server:
+  port: 3000
