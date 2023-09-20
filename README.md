@@ -54,3 +54,11 @@ server:
 ```bash
     mvn test
 ```
+
+## Running application with docker
+
+> You should package the application before
+
+```bash
+    docker compose up -d
+```
