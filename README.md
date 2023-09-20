@@ -60,5 +60,5 @@ server:
 > You should package the application before
 
 ```bash
-    docker compose up -d
+    ./run.sh
 ```
